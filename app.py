@@ -1,15 +1,15 @@
-import flask
+from flask import Flask, request, jsonify, render_template
 import numpy as np
 import pickle
 
-app = flask(__name__)
+app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
 
 @app.route('/')
 def home():
     return render_template('index.html')
 
-@app.route('/predict', method=['POST'])
+@app.route('/predict', methods=['POST'])
 def predict():
     """
     Rendering results on the HTML GUI
@@ -23,4 +23,4 @@ def predict():
     return render_template('index.html', prediction_text = 'Employee Salary should be $ {}'.format(output))
 
 if __name__ == "__main__":
-    app.tun(debug=True)
+    app.run(debug=True)
