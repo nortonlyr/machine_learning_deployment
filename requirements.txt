@@ -16,7 +16,7 @@ lazy-object-proxy==1.4.1
 MarkupSafe==1.1.1
 matplotlib==3.3.0
 mccabe==0.6.1
-numpy==1.19.1
+numpy==1.22.0
 pandas==1.1.0
 Pillow==7.2.0
 pylint==2.3.1
